@@ -4,6 +4,7 @@
 # Personalized
 key.txt
 test.py
+*.DS_Store
 
 ### Images ###
 # JPEG
