@@ -5,6 +5,7 @@
 key.txt
 test.py
 *.DS_Store
+tourist_attraction_dataset_*
 
 ### Images ###
 # JPEG
