@@ -1,7 +1,7 @@
 import os
 import shutil
 
-root_dir = './dataset/new/photos/'
+root_dir = './dataset/new/thai_queried_cleaned/'
 backup_dir = './dataset/data/'
 
 # create the backup directory if it doesn't exist

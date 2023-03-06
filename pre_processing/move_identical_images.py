@@ -4,10 +4,10 @@ from PIL import Image
 import imagehash
 
 # define the directory to search for duplicate images
-directory_to_search = './pre_processing/new/thai_queried/'
+directory_to_search = './dataset/data/'
 
 # define the directory to move duplicate images to
-duplicated_dir = './pre_processing/duplicated/'
+duplicated_dir = './duplicated/'
 
 # create the duplicated directory if it doesn't exist
 if not os.path.exists(duplicated_dir):
@@ -23,7 +23,7 @@ for subdir, dirs, files in os.walk(directory_to_search):
     # loop through each file in the directory
     for file in files:
         # only consider image files
-        if file.endswith('.jpg') or file.endswith('.png') or file.endswith('.jpeg'):
+        if file.endswith('.jpg') or file.endswith('.png') or file.endswith('.jpeg') or file.endswith('webp'):
             # open the image file, convert it to RGB mode, and compute its hash
             with Image.open(os.path.join(subdir, file)).convert('RGB') as img:
                 hash_val = str(imagehash.phash(img))
