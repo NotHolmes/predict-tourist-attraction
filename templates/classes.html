@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List of Strings</title>
+	<style>
+		.center {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			/* height: 100vh; */
+		}
+	</style>
+</head>
+<body>
+	{% for string in strings %}
+	<div class="center">
+			<p>{{ string }}</p>
+	</div>
+	{% endfor %}
+</body>
+</html>

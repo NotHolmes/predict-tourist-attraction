@@ -3,10 +3,14 @@ from flask import Flask, request, render_template
 from keras.models import load_model
 from tensorflow.keras.utils import load_img, img_to_array
 import numpy as np
+from jinja2 import Environment
 
 app = Flask(__name__)
 PATH_TO_MODEL = "./model_224_jupyter.h5"
 model = load_model(PATH_TO_MODEL)
+
+env = Environment()
+env.globals.update(enumerate=enumerate)
 
 class_names = ['ancient_city_(mueang_boran)', 'big_buddha_phuket', 'big_buddha_temple_(wat_phra_yai)', 
                'chaithararam_temple_(wat_chalong)', 'chinatown_-_bangkok', 'historic_city_of_ayutthaya', 
@@ -16,7 +20,7 @@ class_names = ['ancient_city_(mueang_boran)', 'big_buddha_phuket', 'big_buddha_t
 
 @app.route('/')
 def home():
-    return render_template('index.html', prediction=None)
+	return render_template('index.html', prediction=None)
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -39,10 +43,17 @@ def predict():
     image = image.astype('float32') / 255.0
 
     prediction = model.predict(image)[0]
-    predicted_class_idx = np.argmax(prediction)
-    predicted_class_name = class_names[predicted_class_idx]
+    top_index = np.argmax(prediction)
+    top_class = class_names[top_index]
+    top_probability = round(prediction[top_index] * 100, 2)
 
-    return render_template('index.html', prediction=predicted_class_name)
+    return render_template('index.html', prediction=(top_class, top_probability))
+
+@app.route('/classes')
+def classes():
+    strings = class_names
+    return render_template('classes.html', strings=strings)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
