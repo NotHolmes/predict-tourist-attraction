@@ -20,7 +20,7 @@
 		<input type="submit" value="Predict">
 	</form>
 	{% if prediction %}
-		<h2>Prediction: {{ prediction[0] }}</h2>
+		<h2>Prediction: <a href='https://www.google.com/search?q={{prediction[0] | replace("_", " ")}}'>{{ prediction[0] }}</a> </h2>
 		<h3>Confidence: {{ prediction[1] }}%</h3>
 	{% endif %}
 
