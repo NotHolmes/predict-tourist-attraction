@@ -8,12 +8,10 @@ Locate (Thai) tourist attraction from a picture using deep learning. This projec
 
 ## Data
 
-- we gathered our data using [Google Image Scraper](https://github.com/NotHolmes/Google-Image-Scraper/tree/29c7b9fec67cfda02dae7bf37d90a38b00996fbb) then convert, and store them in 224x224 RGB images in a directory with the name of the place.
+- I gathered the data using [Google Image Scraper](https://github.com/NotHolmes/Google-Image-Scraper/tree/29c7b9fec67cfda02dae7bf37d90a38b00996fbb) then convert, and store them in 224x224 RGB images in a directory with the name of the place.
 - identical images then was cleaned using [perceptual hashing technique](https://www.pyimagesearch.com/2017/11/27/image-hashing-opencv-python/), also we manually deleted some images which are not related to the place.
 
 ## Usage
-
-----------------
 
 ### Scraping
 
@@ -31,8 +29,6 @@ Locate (Thai) tourist attraction from a picture using deep learning. This projec
 ### Run the web app
 
 - if you have never install the `requirements.txt` before, in this repository, install required packages with `pip install -r requirements.txt`.
-- specify the model path in `app.py` with variable `MODEL_PATH`.
+- specify the model path in `app.py` with variable `MODEL_PATH` (for example `model.h5` that you have trained).
 - run `python app.py` to start the web app using Flask.
 - connect to `localhost:5000` to see the web app and start predicting.
-
-For more about this project please read our [report](https://docs.google.com/document/d/13HEKk6o9HlwUL6dI_6-oekBSvGKGyqq8AneqP57cH2w/edit?usp=sharing) (in Thai).
