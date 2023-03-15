@@ -6,7 +6,7 @@ import numpy as np
 from jinja2 import Environment
 
 app = Flask(__name__)
-PATH_TO_MODEL = "./model_224_jupyter.h5"
+PATH_TO_MODEL = ""
 model = load_model(PATH_TO_MODEL)
 
 env = Environment()
