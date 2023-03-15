@@ -1,14 +1,21 @@
 # Description
-Locate (Thai) tourist attraction from a picture.  
-currently on a data gathering process.
 
+Locate (Thai) tourist attraction from a picture using deep learning.
 
 # Usage
-- run `pip install -r requirements.txt`.
+
+## Scraping
+
+- in `/Google-Image-Scraper` repository's directory.
+- install required packages with `pip install -r requirements.txt`.
+- run `main.py`, this will read queries line by line in file, specify your input file in `main.py` with variable `PATH`.
+- images will be stored in `photos/SEARCH_KEY/..`
+
+## Train a model
+
+- in this repository, install required packages with `pip install -r requirements.txt`. (this will include packages which are required for running the web app)
 - then simply run `main.ipynb` to train the model and see the result.
 - dataset will be downloaded automatically using [gdown](https://github.com/wkentaro/gdown).
 
+## ความคืบหน้า
 
-# ความคืบหน้า
-- โมเดลปัจจุบันยังติดปัญหา overfitting เนื่องจากข้อมูลมีจำนวนน้อย (~500 images per class) โดยการทำ data augmentation สามารถช่วยได้แต่ไม่เพียงพอ
-- ซึ่งทำให้จำเป็นต้อง scrape ข้อมูลเพิ่มเติมด้วย query ที่ต่างจากเติม ()
