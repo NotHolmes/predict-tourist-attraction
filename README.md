@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Locate (Thai) tourist attraction from a picture using deep learning. This project is a part of our final project in [CS364](https://cs.sci.ku.ac.th/curriculum/bachelor/y2565/course-2/) course at KU.
+Locate (Thai) tourist attraction from a picture using deep learning. This project is a part of my final project in [CS364](https://cs.sci.ku.ac.th/curriculum/bachelor/y2565/course-2/) course at KU.
 
 ## Data
 
