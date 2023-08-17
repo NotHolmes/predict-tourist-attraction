@@ -9,7 +9,7 @@ Locate (Thai) tourist attraction from a picture using deep learning. This projec
 ## Data
 
 - Images have been gathered using [Google Image Scraper](https://github.com/NotHolmes/Google-Image-Scraper/tree/29c7b9fec67cfda02dae7bf37d90a38b00996fbb) then convert, and store them in 224x224 RGB images in a directory with the name of the place.
-- Identical images was cleaned using [perceptual hashing technique](https://www.pyimagesearch.com/2017/11/27/image-hashing-opencv-python/), also we manually deleted some images which are not related to the place.
+- Identical images were cleaned using [perceptual hashing technique](https://www.pyimagesearch.com/2017/11/27/image-hashing-opencv-python/), also we manually deleted some images which are not related to the place.
 
 ## Usage
 
